@@ -1,3 +1,14 @@
+interface NavigationLink {
+  nav_name: string
+  nav_link: string
+}
+
+export interface EpisodeDetail extends EpisodeItem {
+  name: string
+  synopsis: string
+  episode_navigation: NavigationLink[]
+}
+
 export interface AnimeItem {
   id: string
   title: string
