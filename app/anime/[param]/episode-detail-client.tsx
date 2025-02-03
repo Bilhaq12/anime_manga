@@ -59,12 +59,17 @@ export function EpisodeDetailClient({ initialEpisodeDetail }: EpisodeDetailClien
               width={240}
               height={360}
               className="rounded-md object-cover w-full"
+              priority
             />
             <div className="mt-6">
               <h2 className="text-lg font-semibold mb-3">Episodes</h2>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-2">
                 {episodeDetail.episode_navigation.map((episode, index) => (
-                  <Link key={index} href={`/anime/${episode.nav_link.split("/").pop()}`}>
+                  <Link
+                    key={index}
+                    href={`/anime/${episode.nav_link.split("/").pop()}`}
+                    aria-current={episode.nav_name === episodeDetail.name ? "page" : undefined}
+                  >
                     <Button
                       variant={episode.nav_name === episodeDetail.name ? "default" : "outline"}
                       className="w-full justify-center text-xs py-1 h-auto"
@@ -82,4 +87,3 @@ export function EpisodeDetailClient({ initialEpisodeDetail }: EpisodeDetailClien
     </div>
   )
 }
-
