@@ -1,12 +1,13 @@
 import { searchAnime } from "@/lib/db"
 import { AnimeCard } from "@/components/anime-card"
 
-export default async function SearchPage({
-  searchParams,
-}: {
-  searchParams: { [key: string]: string | string[] | undefined }
-}) {
-  const query = searchParams.q as string
+interface PageProps {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+}
+
+export default async function SearchPage({ searchParams }: PageProps) {
+  const resolvedParams = await searchParams
+  const query = resolvedParams.q as string
   const results = await searchAnime(query)
 
   return (
