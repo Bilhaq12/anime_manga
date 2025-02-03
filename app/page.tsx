@@ -1,4 +1,3 @@
-// app/page.tsx
 import { Hero } from "@/components/hero";
 import { AnimeList } from "@/components/anime-list";
 import { FeaturedCollection } from "@/components/featured-collection";
