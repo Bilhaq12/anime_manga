@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button"
-import { Play } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import { Play } from "lucide-react";
 
 export function Hero() {
   return (
@@ -18,9 +18,15 @@ export function Hero() {
           <span className="mr-2">1</span>
           <span>on Trend</span>
         </div>
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 max-w-2xl">Sousou no Frieren</h1>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 max-w-2xl">
+          Sousou no Frieren
+        </h1>
         <p className="text-muted-foreground max-w-2xl mb-8 text-sm sm:text-base">
-        During their decade-long quest to defeat the Demon King, the members of the hero's party—Himmel himself, the priest Heiter, the dwarf warrior Eisen, and the elven mage Frieren—forge bonds through adventures and battles, creating unforgettable precious memories for most of them.! (Source: Crunchyroll News, edited)
+          During their decade-long quest to defeat the Demon King, the members of
+          the hero&apos;s party—Himmel himself, the priest Heiter, the dwarf
+          warrior Eisen, and the elven mage Frieren—forge bonds through
+          adventures and battles, creating unforgettable precious memories for
+          most of them.! (Source: Crunchyroll News, edited)
         </p>
         <Button className="bg-purple-600 hover:bg-purple-700 w-full sm:w-auto">
           <Play className="mr-2 h-4 w-4" />
@@ -28,6 +34,5 @@ export function Hero() {
         </Button>
       </div>
     </div>
-  )
+  );
 }
-
