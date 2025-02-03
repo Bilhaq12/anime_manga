@@ -4,11 +4,7 @@ import { AnimeList } from "@/components/anime-list";
 import { FeaturedCollection } from "@/components/featured-collection";
 import { getAnimeList } from "@/lib/api";
 
-interface HomeProps {
-  searchParams: { page?: string };
-}
-
-export default async function Home({ searchParams }: HomeProps) {
+export default async function Home({ searchParams }: { searchParams: { page?: string } }) { // Inline type
   const page = Number(searchParams.page) || 1;
   let animeList;
   let error;
