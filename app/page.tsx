@@ -2,15 +2,17 @@ import { Hero } from "@/components/hero"
 import { AnimeList } from "@/components/anime-list"
 import { FeaturedCollection } from "@/components/featured-collection"
 import { getAnimeList } from "@/lib/api"
+import type { AnimeResponse } from "@/types/anime"
 
-interface HomeProps {
-  searchParams: { [key: string]: string | string[] | undefined }
+interface PageProps {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }
 
-export default async function Home({ searchParams }: HomeProps) {
-  const page = Number(searchParams.page) || 1
-  let animeList
-  let error
+export default async function Home({ searchParams }: PageProps) {
+  const resolvedParams = await searchParams
+  const page = Number(resolvedParams.page) || 1
+  let animeList: AnimeResponse | undefined
+  let error: string | undefined
 
   try {
     animeList = await getAnimeList(page)
@@ -36,4 +38,3 @@ export default async function Home({ searchParams }: HomeProps) {
     </div>
   )
 }
-
